@@ -1,0 +1,99 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "selctionsort.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Qulick-k/algoruthen_test/blob/master/1118%E6%9C%9F%E4%B8%AD%E8%80%83_%E9%81%B8%E6%93%87%E6%8E%92%E5%BA%8F%E6%B3%95\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "W-Z0kMaDLJOp"
+      },
+      "source": [
+        "Selection sort (選擇排序)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8tM3sv79HQ_V",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "53fcd880-3aca-43e3-d51e-c7f8bd410a34"
+      },
+      "source": [
+        "def Selction_Sort(datas):\n",
+        "    for i in range(len(datas)-1):                             \n",
+        "        max = i # 把i放進當前max數。第一次選從第一個數開始,第二次從第二個數開始etc...             \n",
+        "        for j in range(i+1, len(datas)):    #開始和旁邊的數比較，由陣列長度來判斷迴圈停止     \n",
+        "            if datas[j] > datas[max]:    #當旁邊的數\"j\"，比當前max數還大\n",
+        "                max = j         #就把j的數值放進當前max數\n",
+        "\n",
+        "        datas[i], datas[max] = datas[max], datas[i]  #跳出j迴圈，當前max數已經比\"i\"還大了，所以要把max和i的值互換               \n",
+        "\n",
+        "        print(\"第\",i+1,\"次排序:\",datas)\n",
+        "        #print('---'*10)\n",
+        "    return datas                                       \n",
+        "\n",
+        "maxnum = 8\n",
+        "lists=[None]*maxnum\n",
+        "if __name__ == '__main__':\n",
+        "    import random\n",
+        "    for i in range(maxnum):\n",
+        "     lists[i] = random.randint(1,30)    \n",
+        "    print(\"輸出結果:\",\"\\n原始數列:\",lists)\n",
+        "    lists = Selction_Sort(lists)\n",
+        "    print(\"完成:\",lists)"
+      ],
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "輸出結果: \n",
+            "原始數列: [19, 17, 1, 29, 25, 2, 27, 6]\n",
+            "第 1 次排序: [29, 17, 1, 19, 25, 2, 27, 6]\n",
+            "第 2 次排序: [29, 27, 1, 19, 25, 2, 17, 6]\n",
+            "第 3 次排序: [29, 27, 25, 19, 1, 2, 17, 6]\n",
+            "第 4 次排序: [29, 27, 25, 19, 1, 2, 17, 6]\n",
+            "第 5 次排序: [29, 27, 25, 19, 17, 2, 1, 6]\n",
+            "第 6 次排序: [29, 27, 25, 19, 17, 6, 1, 2]\n",
+            "第 7 次排序: [29, 27, 25, 19, 17, 6, 2, 1]\n",
+            "完成: [29, 27, 25, 19, 17, 6, 2, 1]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MiWPt8bALDN5"
+      },
+      "source": [
+        "總共跑了(n平方-n)/2+4n-3次\n"
+      ]
+    }
+  ]
+}
