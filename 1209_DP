@@ -5,7 +5,7 @@
     "colab": {
       "name": "Untitled4.ipynb",
       "provenance": [],
-      "authorship_tag": "ABX9TyPm8vWH4uVC3js6XbiIPN8a",
+      "authorship_tag": "ABX9TyOjUQCvz0MPR5E7yTBSI1iL",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -25,17 +25,6 @@
       ]
     },
     {
-      "cell_type": "code",
-      "metadata": {
-        "id": "4eJqyqw7Skea"
-      },
-      "source": [
-        ""
-      ],
-      "execution_count": null,
-      "outputs": []
-    },
-    {
       "cell_type": "markdown",
       "metadata": {
         "id": "kjBTO_mwSp3g"
@@ -45,12 +34,27 @@
       ]
     },
     {
-      "cell_type": "markdown",
+      "cell_type": "code",
       "metadata": {
-        "id": "01wFOUvEWePl"
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4eJqyqw7Skea",
+        "outputId": "03ece06c-3790-4658-9ba3-9e1553d6a530"
       },
       "source": [
-        ""
+        "x=1\r\n",
+        "print(x)"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "1\n"
+          ],
+          "name": "stdout"
+        }
       ]
     }
   ]
